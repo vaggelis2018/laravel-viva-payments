@@ -42,9 +42,6 @@ class VivaPaymentsServiceProvider extends ServiceProvider
 
         return new GuzzleClient([
             'base_uri' => $this->getUrl($config['environment']),
-            'curl' => [
-                CURLOPT_SSL_CIPHER_LIST => 'TLSv1',
-            ],
             \GuzzleHttp\RequestOptions::AUTH => [
                 $config['merchant_id'],
                 $config['api_key'],
